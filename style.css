@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    background-image: url(./img/bg.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.btn {
+    color: #000;
+    border: 1px solid #fff;
+    width: fit-content;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: rgba(251, 251, 251, .28);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    transition: .5s;
+    font-size: 2rem;
+}
+
+.btn:hover {
+    color: #fff;
+    background: #000;
+}
+
+.overlay {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, .8);
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    transform: scale(0);
+}
+
+.text {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.text h2 {
+    left: 0;
+    opacity: 0;
+}
+
+.good-mu {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 25vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.block {
+    width: 30%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.arsenal {
+    background-image: url(./img/arsen.jpg);
+    background-repeat: no-repeat;
+    opacity: 0;
+}
+
+.soton {
+    background-image: url(./img/soton.jpg);
+    background-repeat: no-repeat;
+    background-position: -50px 0;
+    opacity: 0;
+}
+
+.mu-then {
+    background-image: url(./img/mu1999.jpg);
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+
+}
+
+.next {
+    color: #000;
+    background: rgba(251, 251, 251, .28);
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    transition: .2s;
+    border-radius: 10px;
+}
+
+.next:hover {
+    color: #fff;
+    background: rgba(0, 0, 0, .3);
+    backdrop-filter: blur(20px);
+}
+
+.overlay:target {
+    transform: scale(1);
+}
+
+.overlay:target img {
+    animation: gon 2s;
+}
+
+.overlay:target .text>h2 {
+    animation: h2 2s .5s forwards;
+}
+
+.overlay:target .arsenal {
+    animation: h2 2s 1s forwards;
+}
+
+.overlay:target .soton {
+    animation: h3 2s 2.5s forwards;
+}
+
+.overlay:target .mu-then {
+    animation: h4 2s 4s forwards;
+}
+
+.overlay:target .liverpool {
+    animation: h2 2s 1s forwards;
+}
+
+.overlay:target .totem {
+    animation: h3 2s 2.5s forwards;
+}
+
+.overlay:target .leices {
+    animation: h4 2s 4s forwards;
+}
+
+
+.liverpool {
+    background-image: url(./img/liver.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+}
+
+.leices {
+    background-image: url(./img/leices.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+}
+
+.totem {
+    background-image: url(./img/totem.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+}
+
+
+@keyframes gon {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes h2 {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    100% {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+@keyframes h3 {
+    0% {
+        opacity: 0;
+        transform: translateY(50%);
+    }
+    100% {
+        opacity: 1;
+        top: 0;
+    }
+}
+
+@keyframes h4 {
+    0% {
+        opacity: 0;
+        transform: translateX(50%);
+    }
+    100% {
+        opacity: 1;
+        right: 0;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .text {
+      font-size: 16px;
+    }
+    .arsenal {
+        background-position: -150px 0;
+    }
+    .soton {
+        background-position: -340px -50px;
+    }
+    .totem {
+        background-position: -65px 0;
+    }
+    .good-mu {
+        height: 16vh;
+        margin-top: 20px;
+    }
+    .next {
+        font-size: .8rem;
+        bottom: 13%;
+    }
+  }
+
